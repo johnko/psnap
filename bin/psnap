@@ -29,14 +29,14 @@
 ######################################################################
 # Script version is yymmdd-HHMMSS in UTC, date -u +%y%m%d-%H%M%S
 ######################################################################
-SCRIPTVERSION=150608-035306
+SCRIPTVERSION=150701-150901
 
 if [ "x-f" == "x${1}" ]; then
     rm -rf /usr/ports/*
 fi
 
 if [ ! -f /usr/ports/COPYRIGHT ] ; then
-    portsnap fetch
+    portsnap --interactive fetch
     portsnap extract
 else
     portsnap update

@@ -1,0 +1,7 @@
+#!/bin/sh
+
+for i in $( find /usr/ports/ -type d -mindepth 2 -maxdepth 2 ) ; do
+    echo $i
+    cd $i
+    make fetch || echo $i >> /root/ports-unfetchable.txt
+done
